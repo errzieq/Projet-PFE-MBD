@@ -27,7 +27,8 @@ import { DetailProductvisiteurComponent } from './visiteur/Dealing/detail-produc
 import { HomevisiteurComponent } from './visiteur/Dealing/home/home.component';
 import { PortfolioImagesvisiteurComponent } from './visiteur/Dealing/portfolio-images/portfolio-images.component';
 import { ChatbotComponent } from './chatbot/chatbot.component'
-
+import { SettingsComponentVendeur } from './vendeur/settings/settings.component';
+import {ConfirmationComponent} from './reset/confirmation/confirmation.component'
 
 const routes: Routes = [
   { path: '', component: HomevisiteurComponent  } ,
@@ -50,7 +51,7 @@ const routes: Routes = [
     {path: '',redirectTo: "app-dashboard",pathMatch: 'full'},
     {path: 'app-charts', canActivate: [AuthGuard],component: ChartsComponent},
     {path: 'app-dashboard', canActivate: [AuthGuard],component: DashboardComponent},
-    {path: 'app-products', canActivate: [AuthGuard],component: ProductsComponent},
+    {path: 'app-products', canActivate: [AuthGuard],component: ProductsComponent}
   ]},
   {path: 'app-admin', canActivate: [AuthGuard],component: AdminComponent,children:[
     {path: '',redirectTo: "app-dashboardadmin",pathMatch: 'full'},
@@ -67,6 +68,8 @@ const routes: Routes = [
     {path: 'app-panier', canActivate: [AuthGuard],component: PanierComponent},
     {path: 'app-settings', canActivate: [AuthGuard],component: SettingsComponent}
   ]},
+  {path:'app-confirmation',component:ConfirmationComponent},
+  {path: 'app-settings', canActivate: [AuthGuard],component: SettingsComponentVendeur}
 ];
 
 @NgModule({

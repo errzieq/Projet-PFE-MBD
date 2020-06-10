@@ -62,12 +62,14 @@ import { PortfolioImagesvisiteurComponent } from './visiteur/Dealing/portfolio-i
 import { MostPopularvisiteurComponent } from './visiteur/Dealing/most-popular/most-popular.component';
 import { AdsHomevisiteurComponent } from './visiteur/Dealing/ads-home/ads-home.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
-
+import {SettingsComponentVendeur} from './vendeur/settings/settings.component'
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { AlertsModule } from 'angular-alert-module';
 import { BrowserAnimationsModule} from'@angular/platform-browser/animations';
-import { PriceService } from './service/PriceService/price.service'
+import { PriceService } from './service/PriceService/price.service';
+import { ResetComponent } from './reset/reset.component';
+import { ConfirmationComponent } from './reset/confirmation/confirmation.component';
 
 
 @NgModule({
@@ -115,7 +117,10 @@ import { PriceService } from './service/PriceService/price.service'
     DetailProductComponent,
     AdsHomeComponent,
     MayLikeComponent,
-    MostPopularComponent
+    MostPopularComponent,
+    SettingsComponentVendeur,
+    ResetComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

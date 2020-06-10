@@ -84,31 +84,31 @@ export class DashboardComponent implements OnInit {
           {
             label: this.tasks[0].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#000000",
             data: [this.tasks[0].Count,this.tasks[0].Mean,this.tasks[0].like],
           },
           {
             label: this.tasks[1].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#808080",
             data: [this.tasks[1].Count,this.tasks[1].Mean,this.tasks[1].like],
           },
           {
             label: this.tasks[2].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#FF9999",
             data: [this.tasks[2].Count,this.tasks[2].Mean,this.tasks[2].like],
           },
           {
             label: this.tasks[3].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#FF3333",
             data: [this.tasks[3].Count,this.tasks[3].Mean,this.tasks[3].like],
           },
           {
             label: this.tasks[4].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#CC0000",
             backgroundColorHover: "#3e95cd",
             data: [this.tasks[4].Count,this.tasks[4].Mean,this.tasks[4].like],
           }
@@ -116,7 +116,7 @@ export class DashboardComponent implements OnInit {
       },
       options: {
         title: {
-          display: true,
+          display: false,
           text: 'Population growth (millions): Europe & Africa'
         },
         legend: { display: false }
@@ -131,7 +131,7 @@ export class DashboardComponent implements OnInit {
       labels: [this.tasks[0].Product_name,this.tasks[1].Product_name,this.tasks[2].Product_name,this.tasks[3].Product_name,this.tasks[4].Product_name],
       datasets: [
         {
-          label: "Population (millions)",
+          label: "",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
           data: [this.tasks[0].like,this.tasks[1].like,this.tasks[2].like,this.tasks[3].like,this.tasks[4].like]
         }
@@ -140,7 +140,7 @@ export class DashboardComponent implements OnInit {
     options: {
       legend: { display: false },
       title: {
-        display: true,
+        display: false,
         text: 'Predicted world population (millions) in 2050'
       }
     }
@@ -581,9 +581,9 @@ export class DashboardComponent implements OnInit {
       var dataFirst = {
         data: this.totalliking_by_categorie,
         fill: false,
-        borderColor: '#fbc658',
+        borderColor: '#E125D4',
         backgroundColor: 'transparent',
-        pointBorderColor: '#fbc658',
+        pointBorderColor: '#E125D4',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8,
@@ -593,9 +593,9 @@ export class DashboardComponent implements OnInit {
       var dataSecond = {
         data: this.rated_by_categorie,
         fill: false,
-        borderColor: '#51CACF',
+        borderColor: '#ff0000',
         backgroundColor: 'transparent',
-        pointBorderColor: '#51CACF',
+        pointBorderColor: '#ff0000',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8
@@ -604,9 +604,9 @@ export class DashboardComponent implements OnInit {
       var dataThird = {
         data: this.totalrating_by_categorie,
         fill: false,
-        borderColor: '#51CACF',
+        borderColor: '#00ff00',
         backgroundColor: 'transparent',
-        pointBorderColor: '#e8c3b9',
+        pointBorderColor: '#00ff00',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8

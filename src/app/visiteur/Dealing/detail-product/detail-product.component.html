@@ -91,7 +91,7 @@
 
 </div>
 <br>
-<div class="container ">
+<div class="edit ">
   <h2>Similiar Products</h2>
 
   <ngx-slick-carousel class="carousel" 
@@ -100,9 +100,9 @@
                       >
 
       <div ngxSlickItem *ngFor="let similiar of similiar " style="float: left">
-          
+        <div class="card" >
               <a href="/product/visiteur/{{similiar.produitId}}">
-                  <img src="{{similiar.Product_img}}" alt="" height="200" width="200">
+                  <img src="{{similiar.Product_img}}" alt="" style="height: 250px;width:100% ;">
               </a>
                   
                 <!--we suppose that the price in database is in DH-->
@@ -115,7 +115,8 @@
                 <div *ngIf="message == 'Dollar'">
                   <p class="price"> {{similiar.Product_price * 0.10 | number:'0.0-2'}}$</p>
                 </div>  
-                <h5>{{similiar.Product_name}}</h5>                 
+                <h5>{{similiar.Product_name}}</h5>  
+              </div>               
       </div>
   </ngx-slick-carousel>
 </div>

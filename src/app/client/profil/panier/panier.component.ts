@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetService } from '../../../service/ImplementationService/projet.service'
 import { Metauser } from 'src/app/service/Interfaces/metauser';
+
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.component.html',
@@ -39,4 +40,5 @@ export class PanierComponent implements OnInit {
     this.metauser = this.metauser.filter(h => h !== meta)
     /* this.metauser.push(meta) hadi ida bghina nzido*/ 
 }
+
 }

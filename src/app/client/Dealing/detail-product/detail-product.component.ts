@@ -6,6 +6,7 @@ import { Metauser } from 'src/app/service/Interfaces/metauser';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { User } from 'src/app/service/Interfaces/user';
 import { PriceService } from 'src/app/service/PriceService/price.service';
+import  Swal  from 'sweetalert2';
 
 @Component({
   selector: 'app-detail-product',
@@ -210,6 +211,15 @@ similiarproducts(idprod):void{
 }
 MostPopularsubcat (categorie,subcategorie): void {
   this.resourceService.popularproductssubcat(categorie,subcategorie).subscribe(populars => (this.populars = populars))
+}
+Alert(){
+  Swal.fire({
+    icon: 'success',
+    title: 'Gestion Panier',
+    showConfirmButton: false,
+    timer: 1500
+  })
+    
 }
 }
 

@@ -22,6 +22,7 @@
                           <th>email</th>
                           <th>city</th>
                           <th>country</th>
+                          <th>type</th>
                           <th>Delete</th>
                           
                       </tr>
@@ -48,6 +49,9 @@
                             </td>
                             <td>
                                 <span>{{user.country}}</span>  
+                            </td>
+                            <td>
+                                <span>{{user.type}}</span>  
                             </td>
                             <td class="text-right">
                               <button class="btn btn-danger" title="delete user" (click)="deleteuser(user)">Delete</button>

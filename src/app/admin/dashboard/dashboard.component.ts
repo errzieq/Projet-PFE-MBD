@@ -108,6 +108,7 @@ export class DashboardComponentAdmin implements OnInit {
     });
   });
 
+   /* Display the Product Most Popular*/
     this.projetService
     .popularproducts()
     .subscribe((data: Task[]) => {
@@ -124,25 +125,25 @@ export class DashboardComponentAdmin implements OnInit {
           {
             label: this.tasks[0].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#060506",
             data: [this.tasks[0].Count,this.tasks[0].Mean,this.tasks[0].like],
           },
           {
             label: this.tasks[1].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#762D65",
             data: [this.tasks[1].Count,this.tasks[1].Mean,this.tasks[1].like],
           },
           {
             label: this.tasks[2].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#463241",
             data: [this.tasks[2].Count,this.tasks[2].Mean,this.tasks[2].like],
           },
           {
             label: this.tasks[3].Product_name,
             type: "bar",
-            backgroundColor: "rgba(0,0,0,0.2)",
+            backgroundColor: "#ff0000",
             data: [this.tasks[3].Count,this.tasks[3].Mean,this.tasks[3].like],
           },
           {
@@ -156,13 +157,14 @@ export class DashboardComponentAdmin implements OnInit {
       },
       options: {
         title: {
-          display: true,
+          display: false,
           text: 'Population growth (millions): Europe & Africa'
         },
         legend: { display: false }
       }
     });
 
+    /*Display the Product Most Popular by rating*/
     this.canvas = document.getElementById("ChartHoriz");
     this.ctx = this.canvas.getContext("2d");
     this.ChartHoriz = new Chart(this.ctx, {
@@ -171,7 +173,7 @@ export class DashboardComponentAdmin implements OnInit {
       labels: [this.tasks[0].Product_name,this.tasks[1].Product_name,this.tasks[2].Product_name,this.tasks[3].Product_name,this.tasks[4].Product_name],
       datasets: [
         {
-          label: "Population (millions)",
+          label: "Rating ",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
           data: [this.tasks[0].like,this.tasks[1].like,this.tasks[2].like,this.tasks[3].like,this.tasks[4].like]
         }
@@ -180,7 +182,7 @@ export class DashboardComponentAdmin implements OnInit {
     options: {
       legend: { display: false },
       title: {
-        display: true,
+        display: false,
         text: 'Predicted world population (millions) in 2050'
       }
     }
@@ -188,7 +190,7 @@ export class DashboardComponentAdmin implements OnInit {
 
     });
 
-
+    /*Display the most active Users*/
     this.projetService
     .activeusers()
     .subscribe((data: User[]) => {
@@ -213,8 +215,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[1].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#008CFF",
+        borderColor: "008CFF",
         data: [{
           x: this.users[1].like,
           y: this.users[1].Count,
@@ -223,8 +225,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[2].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#A2FF00",
+        borderColor: "#A2FF00",
         data: [{
           x: this.users[2].like,
           y: this.users[2].Count,
@@ -233,8 +235,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[3].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#FF0022",
+        borderColor: "#FF0022",
         data: [{
           x: this.users[3].like,
           y: this.users[3].Count,
@@ -243,8 +245,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[4].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#FF00E1",
+        borderColor: "#FF00E1",
         data: [{
           x: this.users[4].like,
           y: this.users[4].Count,
@@ -253,8 +255,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[5].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#4800FF",
+        borderColor: "#4800FF",
         data: [{
           x: this.users[5].like,
           y: this.users[5].Count,
@@ -263,8 +265,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[6].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#00FF9D",
+        borderColor: "#00FF9D",
         data: [{
           x: this.users[6].like,
           y: this.users[6].Count,
@@ -273,8 +275,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[7].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#5F5200",
+        borderColor: "#5F5200",
         data: [{
           x: this.users[7].like,
           y: this.users[7].Count,
@@ -283,8 +285,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[8].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#A13492",
+        borderColor: "#A13492",
         data: [{
           x: this.users[8].like,
           y: this.users[8].Count,
@@ -293,8 +295,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[9].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#200F00",
+        borderColor: "#200F00",
         data: [{
           x: this.users[9].like,
           y: this.users[9].Count,
@@ -303,8 +305,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[10].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#001F0E",
+        borderColor: "#001F0E",
         data: [{
           x: this.users[10].like,
           y: this.users[10].Count,
@@ -313,8 +315,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[11].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#0E001F",
+        borderColor: "#0E001F",
         data: [{
           x: this.users[11].like,
           y: this.users[11].Count,
@@ -323,8 +325,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[12].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#878090",
+        borderColor: "#878090",
         data: [{
           x: this.users[12].like,
           y: this.users[12].Count,
@@ -333,8 +335,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[13].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#262329",
+        borderColor: "#262329",
         data: [{
           x: this.users[13].like,
           y: this.users[13].Count,
@@ -343,8 +345,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[14].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#9991A1",
+        borderColor: "#9991A1",
         data: [{
           x: this.users[14].like,
           y: this.users[14].Count,
@@ -353,8 +355,8 @@ export class DashboardComponentAdmin implements OnInit {
       },
       {
         label: this.users[15].username,
-        backgroundColor: "rgba(255,221,50,0.2)",
-        borderColor: "rgba(255,221,50,1)",
+        backgroundColor: "#808000",
+        borderColor: "#808000",
         data: [{
           x: this.users[15].like,
           y: this.users[15].Count,
@@ -366,18 +368,18 @@ export class DashboardComponentAdmin implements OnInit {
   options: {
     title: {
       display: true,
-      text: 'Predicted world population (millions) in 2050'
+      text: "To hide a user click on it's color"
     }, scales: {
       yAxes: [{ 
         scaleLabel: {
           display: true,
-          labelString: "Happiness"
+          labelString: "Number of Likes made"
         }
       }],
       xAxes: [{ 
         scaleLabel: {
           display: true,
-          labelString: "GDP (PPP)"
+          labelString: "Number ratings made"
         }
       }]
     }
@@ -746,15 +748,15 @@ export class DashboardComponentAdmin implements OnInit {
   
     
       
-
+      /*Most posted by Categorie */
       var speedCanvas = document.getElementById("speedChart");
 
       var dataFirst = {
         data: this.totalliking_by_categorie,
         fill: false,
-        borderColor: '#fbc658',
+        borderColor: '#E125D4',
         backgroundColor: 'transparent',
-        pointBorderColor: '#fbc658',
+        pointBorderColor: '#E125D4',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8,
@@ -764,9 +766,9 @@ export class DashboardComponentAdmin implements OnInit {
       var dataSecond = {
         data: this.rated_by_categorie,
         fill: false,
-        borderColor: '#51CACF',
+        borderColor: '#ff0000',
         backgroundColor: 'transparent',
-        pointBorderColor: '#51CACF',
+        pointBorderColor: '#ff0000',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8
@@ -775,9 +777,9 @@ export class DashboardComponentAdmin implements OnInit {
       var dataThird = {
         data: this.totalrating_by_categorie,
         fill: false,
-        borderColor: '#51CACF',
+        borderColor: '#00ff00',
         backgroundColor: 'transparent',
-        pointBorderColor: '#e8c3b9',
+        pointBorderColor: '#00ff00',
         pointRadius: 4,
         pointHoverRadius: 4,
         pointBorderWidth: 8

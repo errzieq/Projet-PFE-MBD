@@ -1,5 +1,6 @@
 <div class="col-md-10">
         <div>
+          <h5>Popular Category</h5>
               <div *ngFor="let info of infos">
                 <p>{{info.sportcount}}</p>
               </div>
@@ -14,6 +15,8 @@
                 </div>
               </div>
               <hr/>
+
+        <h5>Most Liked Category</h5>
 			  <div style="display: block">
                 <canvas baseChart
                             [data]="doughnutChartData"
@@ -21,7 +24,9 @@
                             [chartType]="doughnutChartType"></canvas>
               </div>
               <hr/>
-              <div style="display: block">
+
+        <h5>Most Posted Category</h5>
+        <div style="display: block">
                 <canvas baseChart
                         [data]="pieChartData"
                         [labels]="pieChartLabels"

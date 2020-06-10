@@ -30,10 +30,6 @@ export class AdminComponent implements OnInit {
     return this.authService.getUser().login;
   }
 
-  logout() {
-    return this.authService.logout();
-  }
-
 
 
 }

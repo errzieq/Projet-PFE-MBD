@@ -21,6 +21,7 @@ export class SearchFormComponent implements OnInit {
   tasks:Task[]
   p: number=1
   message:string;
+  isHidden:boolean = true;
   constructor(private price: PriceService ,private http: HttpClient,private projetService: ProjetService,private _router: Router,private authService: AuthService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -322,6 +323,6 @@ searchproduct(txt:string): void {
   console.log(txt)
   this.projetService.search(txt).subscribe(tasks => (this.tasks = tasks))
   /*this.sent(fileInput)*/
-  
+  this.isHidden = false
 }
 }

@@ -8,7 +8,7 @@ import { ProjetService } from '../service/ImplementationService/projet.service'
 export class ChatbotComponent implements OnInit {
   reponse:any
   rep:any
-  
+  collapsed = true;
   constructor(private projetService: ProjetService) { }
 
   ngOnInit(): void {

@@ -57,6 +57,7 @@ export class ChartsComponentAdmin implements OnInit {
     responsive: true
   };
 
+  /* Create a Bar Chart */
   public barChartLabels = ['Accessories', 'Apparel', 'Books', 'Footwear', 'Personal Care', 'Phones', 'Sporting Goods'];
   public barChartType = 'bar';
   public barChartLegend = true;
@@ -67,9 +68,6 @@ export class ChartsComponentAdmin implements OnInit {
     {data: this.rated_by_categorie, label: 'rated',backgroundColor:"black"}
   ];
 
-
-  
- 
   leastpopularproducts (): void {
     this.projetService.leastpopularproducts().subscribe(tasks => (this.tasks = tasks))
   }
@@ -84,7 +82,6 @@ export class ChartsComponentAdmin implements OnInit {
         .deleteTask(task.produitId)
         .subscribe(() => console.log('Task Deleted'))
   }
-
 
   deleteuser (user: User): void {
     this.users = this.users.filter(h => h !== user)
@@ -133,8 +130,6 @@ export class ChartsComponentAdmin implements OnInit {
           this.rated_by_categorie.push(n.personal_Carerated);
           this.rated_by_categorie.push(n.phonesrated);
           this.rated_by_categorie.push(n.sportrated);
-
-          /* hna nzid arrays akhrin*/
 
           this.count_by_subcategorie_accessories.push(n.bags_Accessoriescount);
           this.count_by_subcategorie_accessories.push(n.beltscount);
@@ -410,14 +405,11 @@ export class ChartsComponentAdmin implements OnInit {
           this.rated_by_subcategorie_sporting.push(n.headwear_Sportingrated);
           this.rated_by_subcategorie_sporting.push(n.sports_equipmentrated);
           this.rated_by_subcategorie_sporting.push(n.watches_Sportingrated);
-          this.rated_by_subcategorie_sporting.push(n.water_bottlerated);
-
-          
-          
-        
-        
+          this.rated_by_subcategorie_sporting.push(n.water_bottlerated);       
       });
       
+
+
       this.count_by_categorie = this.count_by_categorie.filter(f => f !== undefined)
       this.totalrating_by_categorie = this.totalrating_by_categorie.sort((a, b) => {if(a !== undefined){return 1;}else{return 0;}})
       this.totalliking_by_categorie = this.totalliking_by_categorie.sort((a, b) => {if(a !== undefined){return 1;}else{return 0;}})
@@ -458,28 +450,20 @@ export class ChartsComponentAdmin implements OnInit {
       console.log(this.count_by_subcategorie_personal_care)
       console.log(this.count_by_subcategorie_phones)
       console.log(this.count_by_subcategorie_sporting)
-            
-          
-          
-        });
-           
-      
-    
+     });
   }
   
   
  
-  
+  /* Create a doughnut Chart to display the Most Liked Category*/
   public doughnutChartLabels = ['Accessories', 'Apparel', 'Books', 'Footwear', 'Personal Care', 'Phones', 'Sporting Goods'];
   public doughnutChartData = this.totalliking_by_categorie;
   public doughnutChartType = 'doughnut';
   
 
-  
-
-
+  /* Create a pie Chart to display the Most Posted Category*/
   public pieChartLabels = ['Accessories', 'Apparel', 'Books', 'Footwear', 'Personal Care', 'Phones', 'Sporting Goods'];
   public pieChartData = this.count_by_categorie;
-  public backgroundColor: ["#ffffff", "#8e5ea2","#3cba9f","#e8c3b9","#ffffff", "green","black"];
+  public backgroundColor: ["#ffffff", "#C0C0C0","#606060","#202020","#000000", "#660000","#003300"];
   public pieChartType = 'pie';
 }
